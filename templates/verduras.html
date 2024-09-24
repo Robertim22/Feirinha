@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verduras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Verduras</h1>
+
+    <a href="{{ url_for('home') }}" class="btn">Voltar</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço de Compra</th>
+                <th>Preço de Venda</th>
+                <th>Lote</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome }}</td>
+                    <td>{{ produto.quantidade }}</td>
+                    <td>{{ produto.preco_compra }}</td>
+                    <td>{{ produto.preco_venda }}</td>
+                    <td>{{ produto.lote }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Página Inicial</h1>
+
+        <!-- Grupo de botões no topo -->
+        <div class="button-group">
+            <a href="{{ url_for('entrada_produto') }}" class="button">Registrar Entrada</a>
+            <a href="{{ url_for('saida_produto') }}" class="button">Registrar Saída</a>
+            <a href="{{ url_for('estoque') }}" class="button">Visualizar Estoque</a>
+        </div>
+
+        <!-- Bloco de categorias centralizado no meio da tela -->
+        <div class="main-content">
+            <div class="categorias-container">
+                {% for categoria in categorias %}
+                    <div class="categoria-card">
+                        <a href="{{ url_for('produtos_por_categoria', categoria=categoria[0]) }}">
+                            {{ categoria[0] }}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

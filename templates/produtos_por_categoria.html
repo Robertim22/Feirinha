@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos por Categoria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Produtos na Categoria: {{ categoria }}</h1>
+
+        <!-- Exibir mensagens de alerta -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    <ul>
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Tabela de produtos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Valor Compra</th>
+                    <th>Valor Venda</th>
+                    <th>Lote</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome }}</td>
+                    <td>{{ produto.categoria }}</td>
+                    <td>{{ produto.valor_compra }}</td>
+                    <td>{{ produto.valor_venda }}</td>
+                    <td>{{ produto.lote }}</td>
+                    <td>{{ produto.quantidade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="centrer-button">
+            <a href="{{url_for('home') }}" class="button">Voltar para início</a>
+        </div>
+    </div>
+</body>
+</html>

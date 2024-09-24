@@ -1,0 +1,238 @@
+/* Estilo para aplicar imagem de fundo */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url("/static/img/360_F_627538686_fPH75Poj7qMf4duE2J4VMTtKRHOSBKPs.jpg"); /* Caminho direto para a imagem */
+    background-size: cover; /* A imagem vai cobrir a tela inteira */
+    background-position: center center; /* A imagem ficará centralizada */
+    background-repeat: no-repeat; /* Não repetirá a imagem */
+    background-attachment: fixed; /* A imagem ficará fixa ao rolar a página */
+    padding: 0;
+    margin: 0;
+}
+
+/* Reset básico */
+body, h1, h2, h3, p, ul, li, table, th, td, input, select, label, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte padrão */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do container principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalhos */
+h1 {
+    font-size: 2rem;
+    color: #f7e04b; /* Amarelo BK */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grupo de botões - Menu de entrada, saída, estoque */
+.button-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-group .button {
+    text-decoration: none;
+    color: #d79f00; /* Laranja BK */
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border: 2px solid #d79f00;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.button-group .button:hover {
+    background-color: #d79f00;
+    color: white;
+}
+
+/* Estilo para o botão */
+a.button {
+    display: inline-block; /* Para se comportar como um botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    background-color: #f8f8f8; /* Cor de fundo do botão */
+    color: #d79f00; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    font-weight: bold; /* Texto em negrito */
+}
+
+a.button:hover {
+    background-color: #d79f00;
+    color: white;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Centralização e estilo do bloco de categorias */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categorias-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.categoria-card {
+    background-color: #ffc72c;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.categoria-card:hover {
+    transform: scale(1.05);
+}
+
+.categoria-card a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #d62300;
+}
+
+/* Estilo do formulário */
+form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #d79f00;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #f7e04b;
+    color: #d79f00;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto; /* Centraliza a tabela e adiciona margem superior e inferior */
+    max-width: 1000px; /* Define uma largura máxima para a tabela */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #d79f00;
+    color: white;
+}
+
+/* Fundo laranja para as células dos produtos */
+table tr:nth-child(odd) td {
+    background-color: #ffcc80; /* Cor de fundo laranja clara */
+}
+
+table tr:nth-child(even) td {
+    background-color: #ffe0b2; /* Cor de fundo laranja mais clara para linhas alternadas */
+}
+
+/* Caso tenha uma classe específica para produtos */
+td.produto {
+    background-color: #ffcc80; /* Cor de fundo laranja para células de produtos */
+}
+
+/* Mensagens de alerta */
+.flash-messages {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+}
+
+.flash-messages ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flash-messages li {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.flash-messages .success {
+    color: #28a745;
+}
+
+.flash-messages .warning {
+    color: #ffc107;
+}
+
+.flash-messages .error {
+    color: #dc3545;
+}
